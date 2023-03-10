@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header>
+      <img src="./images/icon-menu.svg" class="toggle" alt="" />
+      <img src="./images/logo.svg" alt="" class="logo" />
+      <nav>
+        <ul class="links">
+          <i class="fas fa-times fa-2x close"></i>
+          <li><a href=""> Collections</a></li>
+          <li><a href=""> Men</a></li>
+          <li><a href="">Women</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <div class="icons">
+          <div class="cart">
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+            <div class="cart-container">
+              <h4 class="title">Cart</h4>
+              <div class="orders-list"></div>
+              <button>Checkout</button>
+            </div>
+          </div>
+          <div class="user">
+            <img src="./images/image-avatar.png" alt="avatar" />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="product-page">
+      <div class="container">
+        <div class="product-preview">
+          <img
+            src="./images/image-product-1.jpg"
+            class="selected-img active"
+            alt=""
+          />
+          <div class="imgs-menu">
+            <div class="img-box">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+            </div>
+            <div class="img-box">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+            </div>
+            <div class="img-box">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+            </div>
+            <div class="img-box">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+            </div>
+          </div>
+          <div class="icons">
+            <img src="./images/icon-previous.svg" alt="" class="left-icon" />
+            <img src="./images/icon-next.svg" alt="" class="right-icon" />
+          </div>
+          <div class="overlay">
+            <i class="fas fa-times close-overlay"></i>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="title">Sneaker Company</span>
+          <h2 class="prod-name">Fall Limited Edition Sneakers</h2>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <ul class="price">
+            <li class="new-price">$125.00</li>
+            <li class="discount">50%</li>
+            <li class="old-price">$250.00</li>
+          </ul>
+          <div class="form">
+            <div class="countiy">
+              <i class="fas fa-minus minus-icon"></i>
+              <span class="count">1</span>
+              <i class="fas fa-plus plus-icon"></i>
+            </div>
+            <button class="btn">
+              <i class="fas fa-cart-shopping"></i>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="./app.js"></script>
+  </body>
+</html>
