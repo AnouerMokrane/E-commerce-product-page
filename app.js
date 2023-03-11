@@ -16,6 +16,7 @@ let minusIcon = document.querySelector(".minus-icon");
 let plusIcon = document.querySelector(".plus-icon");
 
 let addBtn = document.querySelector(".btn");
+ 
 
 let data = [];
 let currentIndex = 1;
@@ -92,22 +93,26 @@ if (data.length <= 0) {
     ".orders-list"
   ).innerHTML = `<p>Your cart is empty</p>`;
   document.querySelector(".cart button").style.display = "none";
-} else {
-}
-
-addBtn.onclick = () => {
-  addProdItem();
-  let deleteItem = document.querySelector(".delete-btn");
-  deleteItem.addEventListener("click", (e) => {
-    console.log(e.target.parentNode.remove());
+} 
+addBtn.onclick = () => { 
+  if(counter.textContent == '0')return
+  else {
+    addProdItem();
+  let deleteButtons = document.querySelectorAll(".delete-btn");
+  deleteButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    deleteItem(e.target.parentNode)
   });
-  console.log(data);
+  console.log(data.length)
+});
+  }
+ 
 };
+
 
 function addProdItem() {
   document.querySelector(".cart button").style.display = "block";
-  data.push(
-    `
+    let items = `
     <div class="prod-box">
       <img src="${mainImg.src}" alt="" />
         <div class="info">
@@ -125,9 +130,27 @@ function addProdItem() {
       </div>
       <i class="fa-solid fa-trash-can delete-btn"></i>
     </div>
-    
     `
-  );
-  let unique = [...new Set(data)];
-  document.querySelector(".orders-list").innerHTML = unique.join("");
+  if(!data.includes(items)){
+     data.push(items)
+  }
+  document.querySelector(".orders-list").innerHTML = data.join("");
+  console.log(data)
+}
+function deleteItem(element) {
+  // get the index of the item in the data array
+  const index = data.findIndex(item => item.element === element);
+
+  // remove the item from the data array
+  data.splice(index, 1);
+
+  // remove the HTML element from the DOM
+  element.remove();
+  if(data.length == 0){
+  document.querySelector(
+    ".orders-list"
+  ).innerHTML = `<p>Your cart is empty</p>`;
+  document.querySelector(".cart button").style.display = "none";
+
+  }
 }
