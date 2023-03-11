@@ -138,7 +138,7 @@ function addProdItem() {
   console.log(data)
 }
 function deleteItem(element) {
-  // get the index of the item in the data array
+  // get the index of the item in the arr
   const index = data.findIndex(item => item.element === element);
 
   // remove the item from the data array
